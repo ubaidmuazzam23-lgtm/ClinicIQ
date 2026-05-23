@@ -26,7 +26,7 @@ class Settings(BaseSettings):
     GMAIL_APP_PASSWORD: str = ""
 
     # ChromaDB
-    CHROMA_PERSIST_PATH: str = "./chroma_db"
+    CHROMA_PERSIST_PATH: str = "/data/chroma_db"
 
     # App
     ENVIRONMENT: str = "development"
