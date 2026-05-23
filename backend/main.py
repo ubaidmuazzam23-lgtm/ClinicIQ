@@ -38,6 +38,13 @@ app.include_router(dashboard.router,   prefix="/dashboard",   tags=["Dashboard"]
 app.include_router(radiologist.router, prefix="/radiologist", tags=["Radiologist"])
 app.include_router(admin.router,       prefix="/admin",       tags=["Admin"])
 
+
+@app.on_event("startup")
+async def preload_model():
+    import asyncio
+    loop = asyncio.get_event_loop()
+    await loop.run_in_executor(None, __import__("utils.embedder", fromlist=["get_model"]).get_model)
+
 # ── Health Check ──────────────────────────────────────────────
 @app.get("/health")
 def health():
