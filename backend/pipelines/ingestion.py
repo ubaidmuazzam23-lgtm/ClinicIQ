@@ -8,7 +8,7 @@ from typing import Optional
 import pdfplumber
 import docx
 from io import BytesIO
-from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 from pipelines.ner import extract_entities
 from utils.embedder import get_embeddings
