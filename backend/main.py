@@ -7,7 +7,14 @@ from fastapi.middleware.cors import CORSMiddleware
 from config import settings
 
 # ── Routers ───────────────────────────────────────────────────
-from routers import auth, upload, query, routing, reports, chat, dashboard, radiologist, admin
+import traceback
+try:
+    from routers import auth, upload, query, routing, reports, chat, dashboard, radiologist, admin
+    print("All routers imported OK")
+except Exception as e:
+    print(f"ROUTER IMPORT ERROR: {e}")
+    traceback.print_exc()
+    raise
 
 app = FastAPI(title="ClinicalIQ API", version="1.0.0")
 
