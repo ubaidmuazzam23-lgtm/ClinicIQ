@@ -1,0 +1,9 @@
+cliniq_setup/
+notebook_env/
+__pycache__/
+*.pyc
+.env
+chroma_db/
+clinicaliq_chroma/
+uploads/
+*.ipynb_checkpoints
