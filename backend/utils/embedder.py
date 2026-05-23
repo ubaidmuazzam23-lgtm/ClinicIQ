@@ -13,7 +13,6 @@ def get_model():
         torch.set_default_device("cpu")
         from sentence_transformers import SentenceTransformer
         _model = SentenceTransformer("all-MiniLM-L6-v2", device="cpu")
-        dummy = _model.encode(["warmup"], show_progress_bar=False, convert_to_numpy=True)
         logger.info(f"Embedding model loaded — shape: {dummy.shape}")
     return _model
 
